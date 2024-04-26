@@ -8,9 +8,7 @@ const home = async (req, res) => {
   }
 };
 
-
 const register = async (req, res) => {
-  console.log("register");
   try {
     const { username, email, phone, password, Cpassword } = req.body;
     const userExits = await User.findOne({ email });
@@ -33,7 +31,6 @@ const register = async (req, res) => {
     res.status(500).json("internal  error");
   }
 };
-
 
 const login = async (req, res) => {
   try {
@@ -60,6 +57,5 @@ const login = async (req, res) => {
     res.status(500).json("Internal server error");
   }
 };
-
 
 module.exports = { home, register, login };
